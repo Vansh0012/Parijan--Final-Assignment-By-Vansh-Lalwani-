@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <!-- Login Form -->
+      <div class="form-box login-form active" id="login-form">
+        <h2>Login</h2>
+        <form id="login" onsubmit="return validateLogin()">
+          <div class="input-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+            <span class="password-toggle" id="login-toggle" onclick="togglePassword('login')">Show</span>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <p class="toggle-form">Don't have an account? <span onclick="toggleForm('signup')">Sign Up</span></p>
+        </form>
+      </div>
+
+      <!-- Signup Form -->
+      <div class="form-box signup-form" id="signup-form">
+        <h2>Sign Up</h2>
+        <form id="signup" onsubmit="return validateSignup()">
+          <div class="input-group">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+            <span class="password-toggle" id="signup-toggle" onclick="togglePassword('signup')">Show</span>
+          </div>
+          <button type="submit" class="btn">Sign Up</button>
+          <p class="toggle-form">Already have an account? <span onclick="toggleForm('login')">Log In</span></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
